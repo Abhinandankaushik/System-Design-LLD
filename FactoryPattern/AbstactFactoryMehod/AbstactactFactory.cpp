@@ -75,7 +75,7 @@ public:
         case Type::Basic:
             return new BasicBurger();
         default:
-         cout << "Invalid Input"<<endl;
+            cout << "Invalid Input" << endl;
             return nullptr;
         }
     }
@@ -87,12 +87,11 @@ public:
         case Type::Basic:
             return new BasicBread();
         default:
-           cout << "Invalid Input"<<endl;
-           return nullptr;
+            cout << "Invalid Input" << endl;
+            return nullptr;
         }
     }
 };
-
 
 class SwiggyMealFactory : public MealFactory
 {
@@ -105,7 +104,7 @@ public:
         case Type::Premium:
             return new PremiumBurger();
         default:
-            cout << "Invalid Input"<<endl;
+            cout << "Invalid Input" << endl;
             return nullptr;
         }
     }
@@ -117,19 +116,18 @@ public:
         case Type::Premium:
             return new PremiumBread();
         default:
-           cout << "Invalid Input"<<endl;
-           return nullptr;
+            cout << "Invalid Input" << endl;
+            return nullptr;
         }
     }
 };
 
+int main()
+{
 
-int main (){
-
-    MealFactory* mealfact = new ZomatoMealFactory();
-    Burger* zomatoBurger = mealfact->createBurger(Type::Basic);
-    Bread* zomatoBread = mealfact->createBread(Type::Basic);
+    MealFactory *mealfact = new ZomatoMealFactory();
+    Burger *zomatoBurger = mealfact->createBurger(Type::Basic);
+    Bread *zomatoBread = mealfact->createBread(Type::Basic);
     zomatoBurger->prepare();
     zomatoBread->prepare();
-
 }
